@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         final ProgressBar soundBar3 = (ProgressBar)findViewById(R.id.soundBar3);
         final ProgressBar soundBarProgress = (ProgressBar)findViewById(R.id.soundBarProgress);
 
-        //finding textView on screen
+        //finding textView
         textMeta = (TextView)findViewById(R.id.textMeta);
         textInfo = (TextView)findViewById(R.id.textInfo);
 
