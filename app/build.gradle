@@ -29,4 +29,5 @@ dependencies {
     compile files('libs/TarsosDSP-Android-2.4.jar')
     compile 'com.github.hoary.ffmpeg:FFmpeg-android-arm:2.0.1.1'
     compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

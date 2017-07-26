@@ -1,133 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:layout_column="2"
     tools:context="com.example.greyson.audio_test.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/textMeta"
         android:hint="File metadata"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:layout_column="0"
-        android:layout_row="1"
-        android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInfo" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textInfo"
         android:textStyle="bold"
-        android:layout_column="0"
-        android:layout_row="2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
         android:hint="File location"
-        />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPlay" />
+
     <Button
-        android:layout_column="0"
-        android:layout_row="3"
         android:text="OPEN"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
         android:id="@+id/btnOpen"
         android:onClick="onOpenClick"
-        />
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        tools:layout_editor_absoluteX="464dp"
+        tools:layout_editor_absoluteY="140dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnPlay"
         android:textStyle="bold"
-        android:layout_column="0"
-        android:layout_row="4"
-        android:layout_gravity="left"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="70dp"
         android:text="Play"
         android:onClick="onPlayClick"
-        />
+        app:layout_constraintLeft_toLeftOf="@+id/soundBar3"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/soundBar3" />
+
     <Button
+        android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnStop"
-        android:textStyle="bold"
-        android:layout_column="0"
-        android:layout_row="4"
-        android:layout_gravity="right"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="70dp"
-        android:text="Stop"
         android:onClick="onStopClick"
-        />
+        android:text="Stop"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="@+id/soundBar2"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/soundBar2" />
 
     <ProgressBar
         android:id="@+id/soundBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_column="0"
-        android:layout_gravity="fill_vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="82dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_row="5"
+        android:layout_width="65dp"
+        android:layout_height="235dp"
         android:progress="25"
-        android:progressDrawable="@drawable/soundbartheme" />
+        android:progressDrawable="@drawable/soundbartheme"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
 
     <ProgressBar
         android:id="@+id/soundBar3"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_column="0"
-        android:layout_gravity="fill_vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="196dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_row="5"
+        android:layout_width="65dp"
+        android:layout_height="235dp"
         android:progress="25"
-        android:progressDrawable="@drawable/soundbartheme" />
+        android:progressDrawable="@drawable/soundbartheme"
+        app:layout_constraintRight_toLeftOf="@+id/soundBar"
+        android:layout_marginRight="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/soundBar"
+        app:layout_constraintTop_toTopOf="@+id/soundBar"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ProgressBar
         android:id="@+id/soundBar2"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_column="0"
-        android:layout_gravity="fill_vertical"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="139dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_row="5"
+        android:layout_width="65dp"
+        android:layout_height="235dp"
         android:progress="25"
-        android:progressDrawable="@drawable/soundbartheme" />
+        android:progressDrawable="@drawable/soundbartheme"
+        app:layout_constraintLeft_toRightOf="@+id/soundBar"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/soundBar"
+        app:layout_constraintTop_toTopOf="@+id/soundBar"
+        android:layout_marginStart="5dp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:layout_column="0"
-        android:layout_row="6"
-        android:layout_gravity="center_horizontal"
         android:id="@+id/btnStartBgAnalyze"
-        android:text="Background Analyzer"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
         android:onClick="onBgAnalyzerClick"
-        />
+        android:text="Background Analyzer"
+        app:layout_constraintLeft_toLeftOf="@+id/soundBar3"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/soundBar2"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/soundBar"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_column="0"
-        android:layout_row="7"
-        android:layout_gravity="fill_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
         android:id="@+id/soundBarProgress"
-        />
-</GridLayout>
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="210dp"
+        android:layout_height="45dp"
+        app:layout_constraintRight_toRightOf="@+id/soundBar2"
+        app:layout_constraintLeft_toLeftOf="@+id/soundBar3"
+        app:layout_constraintHorizontal_bias="0.6"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartBgAnalyze" />
+</android.support.constraint.ConstraintLayout>
